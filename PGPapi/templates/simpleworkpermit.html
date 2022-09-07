@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% for data in data %}
+        <p>Work  Permit no---------------------{{data.permitnumber}}</p>
+        <p>Addigned By-------------------------{{data.loggedPerson}}</p>
+        <p>date--------------------------------{{data.date}}</p>
+        <p>type Of Work------------------------{{typeOfWork}}</p>
+        <p>Number of Person--------------------{{data.numberOfPerson}}</p>
+        <p>Start Time--------------------------{{data.startTime}}</p>
+        <p>End Time----------------------------{{data.endTime}}</p>
+        <p>Location----------------------------{{data.location}}</p>
+        <p>Equipment---------------------------{{equipment}}</p>
+        <p>Tool Required-----------------------{{toolRequired}}</p>
+        <p>Working Agency----------------------{{data.workingAgency}}</p>
+        <p>Work Description--------------------{{data.workDescription}}</p>
+        <p>PPE Required------------------------{{ppeRequired}}</p>
+    {% endfor %}
+
+
+</body>
+</html>

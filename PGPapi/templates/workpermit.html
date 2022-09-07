@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    /> -->
+    <style>
+      input:focus {
+        outline: none;
+      }
+
+      textarea:focus {
+          outline: none;
+        }
+
+      input[type="checkbox"] {
+        accent-color: #e86519;
+        outline: none;
+        /* -webkit-appearance: none;
+          -moz-appearance: none; */
+        background: #dbdbdb;
+      }
+
+      input:checked {
+        accent-color: #e86519;
+        /* outline: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background:  #DBDBDB; */
+      }
+
+      /*
+      input[type="checkbox"] {
+          width: 25px;
+          height: 25px;
+          background: gray;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border: none;
+          outline: none;
+          position: relative;
+          left: -5px;
+          top: -5px;
+          cursor: pointer;
+      } */
+
+      .bg-gray {
+        background-color: #dbdbdb;
+      }
+
+      .fw-700 {
+        font-weight: 700;
+      }
+
+      .col-1 {
+        width: 8.33%;
+      }
+      .col-2 {
+        width: 16.66%;
+      }
+      .col-3 {
+        width: 25%;
+      }
+      .col-4 {
+        width: 33.33%;
+      }
+      .col-5 {
+        width: 41.66%;
+      }
+      .col-6 {
+        width: 50%;
+      }
+      .col-7 {
+        width: 58.33%;
+      }
+      .col-8 {
+        width: 66.66%;
+      }
+      .col-9 {
+        width: 75%;
+      }
+      .col-10 {
+        width: 83.33%;
+      }
+      .col-11 {
+        width: 91.66%;
+      }
+      .col-12 {
+        width: 100%;
+      }
+
+      .mx-3 {
+        margin: 0 20px;
+      }
+      .w-100 {
+        width: 100%;
+      }
+
+      .w-50 {
+        width: 50%;
+      }
+      .w-86 {
+        width: 86%;
+      }
+
+      .w-25 {
+        width: 25%;
+      }
+
+      .p-9 {
+        padding: 9px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .main-container {
+        margin: auto;
+      }
+
+      .d-flex {
+        display: flex;
+      }
+
+      .justify-content-between {
+        justify-content: space-between;
+      }
+
+      .justify-content-end {
+        justify-content: end;
+      }
+
+      .align-items-center {
+        align-items: center;
+      }
+
+      .mb-35 {
+        margin-bottom: 35px;
+      }
+
+      .w-92 {
+        width: 92%;
+      }
+
+      .h-80 {
+        max-height: 80px;
+        min-height: 80px;
+      }
+
+      .fs-20 {
+        font-size: 20px;
+      }
+
+      .justify-content-space-around {
+        justify-content: space-around;
+      }
+
+
+      .d-none{
+       opacity: 0;
+      }
+
+      .bg-top-header {
+        background-image: url("./images/HeaderBg.png");
+        background-size: 402px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-position-y: top;
+      }
+
+      /* .bg-top-footer {
+          background-image: url("./images/HeaderBg.png");
+          background-size: 402px;
+          background-repeat: no-repeat;
+          background-position: left;
+          background-position-y: bottom;
+        } */
+
+        .bg-top-footer::before {
+          content: "";
+          position: absolute;
+          background-image: url("./images/HeaderBg.png");
+          background-size: 402px;
+          background-repeat: no-repeat;
+          background-position: left;
+          background-position-y: bottom;
+        }
+
+      .logo {
+        width: 30%;
+      }
+
+      .inside-container {
+        padding: 5px 90px;
+      }
+
+      .order-number-container {
+        display: flex;
+      }
+
+      .border-primary {
+        border: 1px solid #e86519;
+        border-radius: 6px;
+        padding: 11px;
+      }
+
+      .date {
+        border: 1px solid #e86519;
+        border-radius: 6px;
+        padding: 4px;
+      }
+
+      .date-icon {
+        display: flex;
+        align-items: center;
+        padding: 8px 14px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #e86519;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .date-input {
+        border: 0;
+      }
+
+      .check-box-container {
+        margin: 50px 0px;
+      }
+
+      .check-box-container .check-box {
+        height: 29px;
+        width: 29px;
+      }
+
+      .check-box-container p {
+        margin: 0px 20px;
+      }
+
+      .m-0 {
+        margin: 0;
+      }
+
+      /* table css start */
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 50px auto;
+      }
+
+      /* Zebra striping */
+      /* tr:nth-of-type(odd) {
+        background: #eee;
+      } */
+
+      tr {
+          border: 1px solid #e86519 !important;
+        }
+
+      th {
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+      }
+
+      td,
+      th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        font-size: 18px;
+      }
+
+      /*
+      Max width before this PARTICULAR table gets nasty
+      This query will take effect for any screen smaller than 760px
+      and also iPads specifically.
+      */
+      @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+        table {
+          width: 100%;
+        }
+
+        /* Force table to not be like tables anymore */
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+
+        tr {
+          border: 1px solid #ccc;
+        }
+
+        td {
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50%;
+        }
+
+        td:before {
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          /* Label the data */
+          content: attr(data-column);
+
+          color: #000;
+          font-weight: bold;
+        }
+      }
+
+      /* table css end */
+
+
+
+
+
+
+
+
+
+
+      /* ------> */
+
+      *{ box-sizing: border-box; user-select: none; }
+
+
+      input[type=checkbox] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0.2em;
+        font-family: 'Arial'
+      }
+
+      input[type=checkbox] {
+        display: none;
+      }
+
+      input[type=checkbox] + label:before {
+        content: "\2714";
+        border: 0.1em solid transparent;
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        padding-left: 0.4em;
+        padding-bottom: 0.4em;
+        margin-right: 0.4em;
+        vertical-align: center;
+        color: transparent;
+        background-color: #dbdbdb;
+        transition: .2s;
+      }
+
+      input[type=checkbox] + label:active:before {
+        transform: scale(0);
+      }
+
+      input[type=checkbox]:checked + label:before {
+        background-color: #ED820A;
+        border-color: #ED820A;
+        color: #fff;
+      }
+
+      input[type=checkbox]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+      }
+
+      input[type=checkbox]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: #F7C28F;
+        border-color: #F7C28F;
+      }
+
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container col-8 py-4 bg-top-header bg-top-footer">
+      <div class="headers">
+        <div>
+          <img class="logo img-fluid" src="./images/pgpLogo.png" />
+        </div>
+      </div>
+
+      <div class="inside-container">
+        <h6 class="form-select-lg fs-20">Task Details</h6>
+
+        <div class="order-number-container">
+          <div class="my-3 date col-2">
+            <div class="d-flex">
+              <div class="date-icon" id="basic-addon1">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <input
+                type="text"
+                class="date-input w-100 m-1 text-center"
+                value="20-05-22"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+
+          <div class="my-3 date mx-3 col-3">
+            <div class="d-flex">
+              <input
+                type="text"
+                class="date-input w-100 m-1 text-center p-9 fw-700"
+                value="215DRE785455"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- check box con start -->
+
+        <div class="check-box-container">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="weekday-1"
+                name="weekday-1"
+                value="Friday"
+                checked
+              />
+              <label for="weekday-1">Height Work</label>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="weekday-2"
+                name="weekday-1"
+                value="Friday"
+                checked
+              />
+              <label for="weekday-2">Hot Work</label>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="weekday-3"
+                name="weekday-1"
+                value="Friday"
+                checked
+              />
+              <label for="weekday-3">Civil Work</label>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="weekday-4"
+                name="weekday-1"
+                value="Friday"
+                checked
+              />
+              <label for="weekday-4"> <a href="https://google.com">Cold Work</a> </label>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="weekday-5"
+                name="weekday-1"
+                value="Friday"
+                checked
+              />
+              <label for="weekday-5">Confined Space</label>
+            </div>
+          </div>
+        </div>
+        <!-- check box con end -->
+
+        <div>
+          <div class="d-flex mb-35">
+            <div class="col-6">
+              <div class="border-primary w-92">
+                <input
+                  type="text"
+                  class="date-input w-100 m-1"
+                  value="100"
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="d-flex w-100 justify-content-space-around">
+                  <p>Time</p>
+                  <div class="border-primary">
+                    <input
+                      type="text"
+                      class="date-input w-100 m-1"
+                      value="6:00 AM"
+
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex w-100 justify-content-space-around">
+                  <p>To</p>
+                  <div class="border-primary">
+                    <input
+                      type="text"
+                      class="date-input w-100 m-1"
+                      value="9:00 PM"
+                      placeholder="Username"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex mb-35">
+            <div class="col-6">
+              <div class="border-primary w-92">
+                <input
+                  type="text"
+                  class="date-input w-100 m-1"
+                  value="Ahmedabad"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+              <div class="border-primary w-92">
+                <input
+                  type="text"
+                  class="date-input w-100 m-1"
+                  value="Xysfgsfg"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex mb-35">
+            <div class="col-6">
+              <div class="border-primary w-92">
+                <input
+                  type="text"
+                  class="date-input w-100 m-1"
+                  value="Figma"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+              <div class="border-primary w-92">
+                <input
+                  type="text"
+                  class="date-input w-100 m-1"
+                  value="No Issues"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-aria">
+            <div class="border-primary">
+              <textarea class="date-input w-100 m-1 h-80"> </textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- table start -->
+
+        <div>
+          <h6 class="form-select-lg fs-20">Check Points</h6>
+          <table class="">
+            <!-- <thead>
+              <tr>
+                <th>Name</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>N/A</th>
+              </tr>
+            </thead> -->
+            <tbody>
+              <tr>
+                <td data-column="First Name">
+                  1. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-1-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-1-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-1-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-1-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-1-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-1-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  2. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-2-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-2-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-2-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-2-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-2-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-2-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  3. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-3-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-3-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-3-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-3-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-3-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-3-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  4. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-4-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-4-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-4-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-4-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-4-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-4-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  5. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-5-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-5-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-5-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-5-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-5-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-5-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  6. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-6-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-6-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-6-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-6-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-6-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-6-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  7. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-7-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-7-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-7-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-7-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-7-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-7-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  8. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-8-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-8-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-8-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-8-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-8-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-8-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  9. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-9-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-9-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-9-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-9-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-9-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-9-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  10. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-10-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-10-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-10-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-10-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-10-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-10-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  11. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-11-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-11-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-11-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-11-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-11-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-11-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  12. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-12-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-12-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-12-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-12-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-12-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-12-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  13. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-13-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-13-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-13-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-13-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-13-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-13-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  14. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-14-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-14-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-14-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-14-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-14-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-14-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  15. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-15-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-15-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-15-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-15-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-15-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-15-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  16. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-16-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-16-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-16-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-16-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-16-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-16-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-column="First Name">
+                  17. Has equipment been drained/Process Materials Removed?
+                </td>
+                <td data-column="Last Name">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-17-yes"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-17-yes">Yes</label>
+                  </div>
+                </td>
+                <td data-column="Job Title">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-17-no"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-17-no">No</label>
+                  </div>
+                </td>
+                <td data-column="Twitter">
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      id="Process-17-na"
+                      name="weekday-1"
+                      value="Friday"
+                      checked
+                    />
+                    <label for="Process-17-na">N/A</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- table end -->
+
+        <div>
+          <h6 class="form-select-lg fs-20">P.P.E Required</h6>
+
+          <div class="check-box-container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Helment"
+                  name="Helment"
+                  value="Friday"
+                  checked
+                />
+                <label for="Helment">Helment</label>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Sefety-belt"
+                  name="Sefety-belt"
+                  value="Friday"
+                  checked
+                />
+                <label for="Sefety-belt">Sefety belt</label>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Safety-shoes"
+                  name="Safety-shoes"
+                  value="Friday"
+                  checked
+                />
+                <label for="Safety-shoes">Safety shoes, Gum Boot</label>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Nose-Mask"
+                  name="Nose-Mask"
+                  value="Friday"
+                  checked
+                />
+                <label for="Nose-Mask">Nose Mask</label>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Confined-Sp"
+                  name="Confined Sp"
+                  value="Friday"
+                  checked
+                />
+                <label for="Confined Sp">Confined Space</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- g2 -->
+
+          <div class="check-box-container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Goggles"
+                  name="Goggles"
+                  value="Friday"
+                  checked
+                />
+                <label for="Goggles">Goggles</label>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Face-Shild"
+                  name="Face-Shild"
+                  value="Friday"
+                  checked
+                />
+                <label for="Face-Shild">Face Shild</label>
+              </div>
+
+              <div class="d-flex align-items-center ">
+                <input
+                  type="checkbox"
+                  id="Ear-Muff-Plug"
+                  name="Ear-Muff-Plug"
+                  value="Friday"
+                  checked
+                />
+                <label for="Ear-Muff-Plug">Ear Muff, Plug</label>
+              </div>
+              <div class="d-flex align-items-center d-none">
+                <input
+                  type="checkbox"
+                  id="Ear-Muff-Plug"
+                  name="Ear-Muff-Plug"
+                  value="Friday"
+                  checked
+                />
+                <label for="Ear-Muff-Plug">Ear Muff, Plug</label>
+              </div>
+              <div class="d-flex align-items-center d-none">
+                <input
+                  type="checkbox"
+                  id="Ear-Muff-Plug"
+                  name="Ear-Muff-Plug"
+                  value="Friday"
+                  checked
+                />
+                <label for="Ear-Muff-Plug">Ear Muff, Plug</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- g3 -->
+          <div class="check-box-container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="Others"
+                  name="Others"
+                  value="Friday"
+                  checked
+                />
+                <label for="Others">Others</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="border-primary w-50 mb-35">
+            <input
+              type="text"
+              class="date-input w-100 m-1"
+              value="Yes"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+
+          <div class="border-primary w-95 ">
+            <input
+              type="text"
+              class="date-input w-100 m-1"
+              value="Joe Root"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
